@@ -115,9 +115,7 @@ function App() {
               animate="visible"
               variants={slideInLeft}
             >
-              <motion.h1 variants={fadeInUp}>
-                We're a Team of Engineers, Designers, Product Managers, and Problem Solvers.
-              </motion.h1>
+              <motion.h1 variants={fadeInUp}>JusterNet</motion.h1>
               <motion.p variants={fadeInUp}>
                 We are bound by our commitment to help Teams succeed and our culture of Innovation
                 Software Development and Services, we at JusterNet Guide You Through Your Company's
@@ -156,59 +154,100 @@ function App() {
               animate="visible"
               variants={slideInRight}
             >
-              <motion.div
-                className="hero-circle"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-              >
+              <div className="earth-satellite-container">
+                {/* Earth */}
                 <motion.div
-                  className="circle-inner"
-                  animate={{ scale: [1, 1.1, 1] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                ></motion.div>
-                <div className="circle-dots">
+                  className="earth"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+                >
+                  <div className="earth-surface">
+                    <div className="continent continent-1"></div>
+                    <div className="continent continent-2"></div>
+                    <div className="continent continent-3"></div>
+                  </div>
+                  <div className="earth-atmosphere"></div>
+                </motion.div>
+
+                {/* Satellite Orbit */}
+                <motion.div
+                  className="satellite-orbit"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
+                >
                   <motion.div
-                    className="dot"
-                    animate={{ scale: [1, 1.5, 1] }}
+                    className="satellite"
+                    animate={{
+                      rotate: -360,
+                      scale: [1, 1.1, 1],
+                    }}
+                    transition={{
+                      rotate: { duration: 15, repeat: Infinity, ease: 'linear' },
+                      scale: { duration: 3, repeat: Infinity, ease: 'easeInOut' },
+                    }}
+                  >
+                    <div className="satellite-body"></div>
+                    <div className="satellite-panel satellite-panel-left"></div>
+                    <div className="satellite-panel satellite-panel-right"></div>
+                    <div className="satellite-antenna"></div>
+                  </motion.div>
+                </motion.div>
+
+                {/* Stars */}
+                <div className="stars">
+                  <motion.div
+                    className="star star-1"
+                    animate={{ opacity: [0.3, 1, 0.3] }}
                     transition={{ duration: 2, repeat: Infinity, delay: 0 }}
                   ></motion.div>
                   <motion.div
-                    className="dot"
-                    animate={{ scale: [1, 1.5, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                    className="star star-2"
+                    animate={{ opacity: [0.5, 1, 0.5] }}
+                    transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
                   ></motion.div>
                   <motion.div
-                    className="dot"
-                    animate={{ scale: [1, 1.5, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                    className="star star-3"
+                    animate={{ opacity: [0.4, 1, 0.4] }}
+                    transition={{ duration: 2.5, repeat: Infinity, delay: 1 }}
                   ></motion.div>
                   <motion.div
-                    className="dot"
-                    animate={{ scale: [1, 1.5, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
+                    className="star star-4"
+                    animate={{ opacity: [0.6, 1, 0.6] }}
+                    transition={{ duration: 1.8, repeat: Infinity, delay: 1.5 }}
                   ></motion.div>
                 </div>
-              </motion.div>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="services">
+      <motion.section
+        className="services"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="container">
-          <div className="section-header">
+          <motion.div className="section-header" variants={fadeInUp}>
             <h2>Our Services</h2>
             <p>
               We help you to build high-quality digital solutions and products as well as deliver a
               wide range of related professional services. We are providing world-class service to
               our clients.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="services-grid">
-            <div className="service-card">
-              <div className="service-icon">
+          <motion.div
+            className="services-grid"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <motion.div className="service-card" variants={scaleIn}>
+              <motion.div className="service-icon" whileHover={{ scale: 1.1, rotate: 5 }}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M12 2L2 7L12 12L22 7L12 2Z"
@@ -232,17 +271,17 @@ function App() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </div>
+              </motion.div>
               <h3>Web App Development</h3>
               <p>
                 Our Custom Web Development Services Include Both Front-End And Back-End Development.
                 Whether It Is Enhancing An Existing App Or Architecting An Enterprise App, Our
                 Developers Are Up For The Challenge.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="service-card">
-              <div className="service-icon">
+            <motion.div className="service-card" variants={scaleIn}>
+              <motion.div className="service-icon" whileHover={{ scale: 1.1, rotate: 5 }}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
                   <rect
                     x="2"
@@ -258,17 +297,17 @@ function App() {
                   <line x1="17" y1="2" x2="17" y2="22" stroke="currentColor" strokeWidth="2" />
                   <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" strokeWidth="2" />
                 </svg>
-              </div>
+              </motion.div>
               <h3>Mobile App Development</h3>
               <p>
                 We Have Expertise In Creating Multi-Platform Mobile App Solutions For Both Android
                 And IOS Devices. Using PhoneGap, Xamarin, And React Native, We Offer Custom Mobile
                 App That Runs Smoothly On Multiple Platforms.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="service-card">
-              <div className="service-icon">
+            <motion.div className="service-card" variants={scaleIn}>
+              <motion.div className="service-icon" whileHover={{ scale: 1.1, rotate: 5 }}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
                   <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
                   <path
@@ -299,7 +338,7 @@ function App() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </div>
+              </motion.div>
               <h3>Game Development</h3>
               <p>
                 Our bespoke Game Development services offer comprehensive solutions for designing,
@@ -307,10 +346,10 @@ function App() {
                 full-fledged game design, our expert team specializes in both 2D and 3D game
                 development.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="service-card">
-              <div className="service-icon">
+            <motion.div className="service-card" variants={scaleIn}>
+              <motion.div className="service-icon" whileHover={{ scale: 1.1, rotate: 5 }}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M9.5 2A2.5 2.5 0 0 1 12 4.5V9a2.5 2.5 0 0 1-4.96.44L7 9.5A2.5 2.5 0 0 1 9.5 2Z"
@@ -334,7 +373,7 @@ function App() {
                     strokeWidth="2"
                   />
                 </svg>
-              </div>
+              </motion.div>
               <h3>Artificial Intelligence</h3>
               <p>
                 Leveraging cutting-edge AI, we offer solutions that transform business landscapes.
@@ -343,10 +382,10 @@ function App() {
                 intelligent systems that are not only innovative but also integral to driving
                 business value and competitive edge.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="service-card">
-              <div className="service-icon">
+            <motion.div className="service-card" variants={scaleIn}>
+              <motion.div className="service-icon" whileHover={{ scale: 1.1, rotate: 5 }}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M14 2H6A2 2 0 0 0 4 4V20A2 2 0 0 0 6 22H18A2 2 0 0 0 20 20V8Z"
@@ -358,7 +397,7 @@ function App() {
                   <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" strokeWidth="2" />
                   <polyline points="10,9 9,9 8,9" stroke="currentColor" strokeWidth="2" />
                 </svg>
-              </div>
+              </motion.div>
               <h3>Data Extraction/Transformation</h3>
               <p>
                 Data Is Every Thing And Every Where. We Have An Expert Architects And Developers For
@@ -366,10 +405,10 @@ function App() {
                 FTP File Share To Cloud. We Have Experience Is Using Databricks, Snowflake, Azure
                 Data Factory, Many More Tools.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="service-card">
-              <div className="service-icon">
+            <motion.div className="service-card" variants={scaleIn}>
+              <motion.div className="service-icon" whileHover={{ scale: 1.1, rotate: 5 }}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10Z"
@@ -393,7 +432,7 @@ function App() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </div>
+              </motion.div>
               <h3>Cloud Computing</h3>
               <p>
                 We Have Cloud Certified Architects And Developers Who Can Provide Complex Solution
@@ -401,10 +440,10 @@ function App() {
                 Cloud Design Patterns. We Can Provide On-Prem To Cloud Migration, Or We Can Provide
                 Cost Effective Solution For Hosting On Cloud.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="service-card">
-              <div className="service-icon">
+            <motion.div className="service-card" variants={scaleIn}>
+              <motion.div className="service-icon" whileHover={{ scale: 1.1, rotate: 5 }}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
                   <path
                     d="M12 2L2 7L12 12L22 7L12 2Z"
@@ -429,7 +468,7 @@ function App() {
                   />
                   <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
                 </svg>
-              </div>
+              </motion.div>
               <h3>Blockchain Development</h3>
               <p>
                 We specialize in blockchain technology and decentralized applications (DApps). Our
@@ -437,10 +476,10 @@ function App() {
                 platforms, and Web3 integration. We help businesses leverage blockchain for
                 transparency, security, and innovation in their digital transformation journey.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Projects Section */}
       <section className="projects">
@@ -675,51 +714,93 @@ function App() {
       </section>
 
       {/* Work Process Section */}
-      <section className="work-process">
+      <motion.section
+        className="work-process"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="container">
-          <div className="section-header">
+          <motion.div className="section-header" variants={fadeInUp}>
             <h2>Work process</h2>
             <p>Our streamlined approach ensures efficient delivery and exceptional results</p>
-          </div>
+          </motion.div>
 
-          <div className="process-grid">
-            <div className="process-step">
-              <div className="step-number">01</div>
-              <h3>Consultation & Discovery</h3>
+          <motion.div
+            className="process-grid"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <motion.div className="process-step preparation" variants={scaleIn}>
+              <motion.div className="step-number" whileHover={{ scale: 1.1, rotate: 5 }}>
+                01
+              </motion.div>
+              <div className="step-badge">Preparation</div>
+              <h3>Consultation & Vision Identify</h3>
               <p>
-                We begin with understanding your vision, goals, and requirements through detailed
-                consultation sessions.
+                At this stage, we get acquainted with your needs and outline the goals and desired
+                results.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="process-step">
-              <div className="step-number">02</div>
-              <h3>Strategy & Planning</h3>
-              <p>
-                We develop a comprehensive strategy and project roadmap tailored to your specific
-                needs.
-              </p>
-            </div>
+            <motion.div className="process-step estimation" variants={scaleIn}>
+              <motion.div className="step-number" whileHover={{ scale: 1.1, rotate: 5 }}>
+                02
+              </motion.div>
+              <div className="step-badge">Planning</div>
+              <h3>Estimation, Budget & Contract</h3>
+              <p>Afterward, we estimate your project, based on the information we received.</p>
+            </motion.div>
 
-            <div className="process-step">
-              <div className="step-number">03</div>
-              <h3>Design & Development</h3>
+            <motion.div className="process-step design" variants={scaleIn}>
+              <motion.div className="step-number" whileHover={{ scale: 1.1, rotate: 5 }}>
+                03
+              </motion.div>
+              <div className="step-badge">Start</div>
+              <h3>UI/UX Design + Features</h3>
               <p>
-                Our team creates beautiful designs and develops robust solutions using cutting-edge
-                technologies.
+                You receive a smart design and a detailed description of the functions of your
+                product.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="process-step">
-              <div className="step-number">04</div>
-              <h3>Testing & Launch</h3>
+            <motion.div className="process-step development" variants={scaleIn}>
+              <motion.div className="step-number" whileHover={{ scale: 1.1, rotate: 5 }}>
+                04
+              </motion.div>
+              <div className="step-badge">Development</div>
+              <h3>Development</h3>
               <p>
-                Rigorous testing ensures quality, followed by a smooth launch and ongoing support.
+                Here, our developers handle your application's implementation, coding, and
+                optimization.
               </p>
-            </div>
-          </div>
+            </motion.div>
+
+            <motion.div className="process-step testing" variants={scaleIn}>
+              <motion.div className="step-number" whileHover={{ scale: 1.1, rotate: 5 }}>
+                05
+              </motion.div>
+              <div className="step-badge">Quality Assurance</div>
+              <h3>Testing</h3>
+              <p>Our testers will check your product deeply to ensure it has no bugs or errors.</p>
+            </motion.div>
+
+            <motion.div className="process-step delivery" variants={scaleIn}>
+              <motion.div className="step-number" whileHover={{ scale: 1.1, rotate: 5 }}>
+                06
+              </motion.div>
+              <div className="step-badge">Finish</div>
+              <h3>Delivery</h3>
+              <p>
+                This is the final stage of our cooperation. Here, we will provide you with the ready
+                project and all related materials.
+              </p>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Industries Section */}
       <section className="industries">
@@ -1054,46 +1135,226 @@ function App() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="testimonials">
+      <motion.section
+        className="testimonials"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="container">
-          <div className="section-header">
+          <motion.div className="section-header" variants={fadeInUp}>
             <h2>Testimonials</h2>
             <p>What our clients say about working with us</p>
-          </div>
+          </motion.div>
 
-          <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>
-                  "Working with this team was an absolute pleasure. They delivered exactly what we
-                  needed and exceeded our expectations in every way."
-                </p>
-              </div>
-              <div className="testimonial-author">
-                <div className="author-info">
-                  <h4>Sarah Johnson</h4>
-                  <span>CEO, TechStart Inc.</span>
+          <motion.div
+            className="testimonials-grid"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <motion.div className="testimonial-card" variants={scaleIn}>
+              <div className="testimonial-rating">
+                <div className="stars">
+                  <span>★★★★★</span>
                 </div>
               </div>
-            </div>
-
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>
-                  "The attention to detail and quality of work is outstanding. Our new platform has
-                  significantly improved our business operations."
-                </p>
-              </div>
               <div className="testimonial-author">
+                <div className="author-avatar">
+                  <span>JB</span>
+                </div>
                 <div className="author-info">
-                  <h4>Michael Chen</h4>
-                  <span>CTO, InnovateCorp</span>
+                  <h4>Jürgen Bröker</h4>
+                  <span>Executive Director, Healthcare Platform Co.</span>
                 </div>
               </div>
-            </div>
-          </div>
+              <div className="testimonial-content">
+                <p>
+                  "Darly Solutions' work so far inspires confidence, as they're skilled and
+                  trustworthy. The health platform is incredibly happy with their work. The team at
+                  Darly is communicative, responsive, and responsible. I'd recommend them to people
+                  looking to do more than build a simple little software."
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div className="testimonial-card" variants={scaleIn}>
+              <div className="testimonial-rating">
+                <div className="stars">
+                  <span>★★★★★</span>
+                </div>
+              </div>
+              <div className="testimonial-author">
+                <div className="author-avatar">
+                  <span>PF</span>
+                </div>
+                <div className="author-info">
+                  <h4>PJ Fisher</h4>
+                  <span>Head of Tech, Software Consulting Firm</span>
+                </div>
+              </div>
+              <div className="testimonial-content">
+                <p>
+                  "By collaborating with Darly Solutions, there is a significant improvement in the
+                  project's quality of codes compared to their original codebase. They lead
+                  efficient project management and keep the client updated with their reports.
+                  They're a flexible team that delivers promising results."
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div className="testimonial-card" variants={scaleIn}>
+              <div className="testimonial-rating">
+                <div className="stars">
+                  <span>★★★★★</span>
+                </div>
+              </div>
+              <div className="testimonial-author">
+                <div className="author-avatar">
+                  <span>IN</span>
+                </div>
+                <div className="author-info">
+                  <h4>Inna Netudikhata</h4>
+                  <span>CEO, Mama Travel</span>
+                </div>
+              </div>
+              <div className="testimonial-content">
+                <p>
+                  "Darly Solutions was able to develop the site with all functions running. The team
+                  was responsive throughout the engagement. They excelled at scheduling and
+                  delivered projects on the specified timeline. The whole team was a pleasure to
+                  work with."
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div className="testimonial-card" variants={scaleIn}>
+              <div className="testimonial-rating">
+                <div className="stars">
+                  <span>★★★★★</span>
+                </div>
+              </div>
+              <div className="testimonial-author">
+                <div className="author-avatar">
+                  <span>FL</span>
+                </div>
+                <div className="author-info">
+                  <h4>Felix Leontyev</h4>
+                  <span>Head of Technology, PSS AG</span>
+                </div>
+              </div>
+              <div className="testimonial-content">
+                <p>
+                  "The quality of their work is very high, and we get very good customer feedback on
+                  what our site looks like. They're very reliable and have a great overview of the
+                  technologies they're using. They meet our deadlines and are very accurate with
+                  their time estimations."
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div className="testimonial-card" variants={scaleIn}>
+              <div className="testimonial-rating">
+                <div className="stars">
+                  <span>★★★★★</span>
+                </div>
+              </div>
+              <div className="testimonial-author">
+                <div className="author-avatar">
+                  <span>GL</span>
+                </div>
+                <div className="author-info">
+                  <h4>Gordon Lang</h4>
+                  <span>CTO, Vidina Solutions Ltd</span>
+                </div>
+              </div>
+              <div className="testimonial-content">
+                <p>
+                  "LLC Darly Solutions are highly skilled at UI/UX and follow very good engineering
+                  standards, and have been very professional in its approach to all the work to
+                  date. They have taken ownership of the work in way that demonstrates how much they
+                  value the work they are doing."
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div className="testimonial-card" variants={scaleIn}>
+              <div className="testimonial-rating">
+                <div className="stars">
+                  <span>★★★★★</span>
+                </div>
+              </div>
+              <div className="testimonial-author">
+                <div className="author-avatar">
+                  <span>PN</span>
+                </div>
+                <div className="author-info">
+                  <h4>Piotr Nowakowski</h4>
+                  <span>Founder, 79 Characters, Inc.</span>
+                </div>
+              </div>
+              <div className="testimonial-content">
+                <p>
+                  "Darly Solutions developed the app in a quick manner, and the code quality was
+                  excellent. The professional team was committed to building a successful product.
+                  The code quality was good, and the app has been built in a little more than 1
+                  month."
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div className="testimonial-card" variants={scaleIn}>
+              <div className="testimonial-rating">
+                <div className="stars">
+                  <span>★★★★★</span>
+                </div>
+              </div>
+              <div className="testimonial-author">
+                <div className="author-avatar">
+                  <span>MS</span>
+                </div>
+                <div className="author-info">
+                  <h4>Maiza Simeon</h4>
+                  <span>Founder, Food App Startup</span>
+                </div>
+              </div>
+              <div className="testimonial-content">
+                <p>
+                  "Darly Solutions' work helped my business tremendously. They were able to identify
+                  key areas for growth and improvement. The team was communicative and professional
+                  throughout the entire engagement. They're really professional and they know what
+                  they're doing."
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div className="testimonial-card" variants={scaleIn}>
+              <div className="testimonial-rating">
+                <div className="stars">
+                  <span>★★★★★</span>
+                </div>
+              </div>
+              <div className="testimonial-author">
+                <div className="author-avatar">
+                  <span>KD</span>
+                </div>
+                <div className="author-info">
+                  <h4>Kieran Donovan</h4>
+                  <span>Managing Director, Corporate Advisory Firm</span>
+                </div>
+              </div>
+              <div className="testimonial-content">
+                <p>
+                  "The responsiveness, attention to detail and high-level communication from Darly
+                  Solutions was outstanding. They were highly responsive, worked to tight deadlines
+                  and provided great feedback and communication throughout the entire project."
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Success Stories Section */}
       <section className="success-stories">
@@ -1253,6 +1514,9 @@ function App() {
                 </li>
                 <li>
                   <a href="#contact">Contact</a>
+                </li>
+                <li>
+                  <a href="/privacy">Privacy Policy</a>
                 </li>
               </ul>
             </div>
