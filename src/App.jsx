@@ -59,10 +59,21 @@ function App() {
         <div className="container">
           <div className="hero-content">
             <div className="hero-text">
-              <h1>UI/UX Design and custom software solutions</h1>
+              <h1>We're a Team of Engineers, Designers, Product Managers, and Problem Solvers.</h1>
               <p>
-                We create beautiful, functional, and user-friendly digital experiences that help
-                your business grow and succeed in the digital world.
+                We are bound by our commitment to help Teams succeed and our culture of Innovation
+                Software Development and Services, we at JusterNet Guide You Through Your Company's
+                Digital Transformation. We Provide Expert Consulting, Development, & Implementation
+                of Tomorrows Technology Today! We deliver exceptional custom technology and digital
+                experiences for the enterprise.​We design, develop and implement ground breaking
+                software development with our dedicated team to help you through the transition.
+                Working on Micro-services, Docker, Kubernetes or DevOps, we at Justernet can provide
+                you the solution.​We expertise in Microsoft's Azure cloud platform to build, deploy,
+                and scale your apps. Transitioning from On-Premise to Hybrid environment or entirely
+                on Cloud? Our Team can help you with cost effective manner. ETL (Etract Transform
+                and Load) or ELT (Extract Load and Transform)? We provide data transformation using
+                Azure Data Factory, Azure Data Bricks, Azure DataLake, Spark, Machine Learning and
+                Data Science and PowerBI tools
               </p>
               <div className="hero-buttons">
                 <button className="btn-primary">Get Started</button>
@@ -89,7 +100,11 @@ function App() {
         <div className="container">
           <div className="section-header">
             <h2>Our Services</h2>
-            <p>We offer comprehensive digital solutions to help your business thrive</p>
+            <p>
+              We help you to build high-quality digital solutions and products as well as deliver a
+              wide range of related professional services. We are providing world-class service to
+              our clients.
+            </p>
           </div>
 
           <div className="services-grid">
@@ -119,34 +134,11 @@ function App() {
                   />
                 </svg>
               </div>
-              <h3>Web Development</h3>
+              <h3>Web App Development</h3>
               <p>
-                Custom web applications built with modern technologies and best practices for
-                optimal performance.
-              </p>
-            </div>
-
-            <div className="service-card">
-              <div className="service-icon">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-                  <rect
-                    x="2"
-                    y="3"
-                    width="20"
-                    height="14"
-                    rx="2"
-                    ry="2"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                  <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" strokeWidth="2" />
-                  <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" strokeWidth="2" />
-                </svg>
-              </div>
-              <h3>UI/UX Design</h3>
-              <p>
-                Beautiful and intuitive user interfaces designed to provide exceptional user
-                experiences.
+                Our Custom Web Development Services Include Both Front-End And Back-End Development.
+                Whether It Is Enhancing An Existing App Or Architecting An Enterprise App, Our
+                Developers Are Up For The Challenge.
               </p>
             </div>
 
@@ -168,25 +160,89 @@ function App() {
                   <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" strokeWidth="2" />
                 </svg>
               </div>
-              <h3>Mobile Apps</h3>
-              <p>Native and cross-platform mobile applications for iOS and Android devices.</p>
+              <h3>Mobile App Development</h3>
+              <p>
+                We Have Expertise In Creating Multi-Platform Mobile App Solutions For Both Android
+                And IOS Devices. Using PhoneGap, Xamarin, And React Native, We Offer Custom Mobile
+                App That Runs Smoothly On Multiple Platforms.
+              </p>
             </div>
 
             <div className="service-card">
               <div className="service-icon">
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
                   <path
-                    d="M19.4 15A1.65 1.65 0 0 0 21 13.35A1.65 1.65 0 0 0 19.4 11.65A1.65 1.65 0 0 0 18 13A1.65 1.65 0 0 0 19.4 15Z"
+                    d="M8 14s1.5 2 4 2 4-2 4-2"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <line
+                    x1="9"
+                    y1="9"
+                    x2="9.01"
+                    y2="9"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <line
+                    x1="15"
+                    y1="9"
+                    x2="15.01"
+                    y2="9"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3>Game Development</h3>
+              <p>
+                Our bespoke Game Development services offer comprehensive solutions for designing,
+                building, and launching engaging and interactive games. From concept art to
+                full-fledged game design, our expert team specializes in both 2D and 3D game
+                development.
+              </p>
+            </div>
+
+            <div className="service-card">
+              <div className="service-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M9.5 2A2.5 2.5 0 0 1 12 4.5V9a2.5 2.5 0 0 1-4.96.44L7 9.5A2.5 2.5 0 0 1 9.5 2Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M14.5 6A2.5 2.5 0 0 1 17 8.5a2.5 2.5 0 0 1-2.5 2.5h-.5A2.5 2.5 0 0 1 12 8.5V6a2.5 2.5 0 0 1 2.5 0Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M12 12.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path d="M8.5 12H12" stroke="currentColor" strokeWidth="2" />
+                  <path
+                    d="M12 16.5H8.5A2.5 2.5 0 1 1 8.5 12"
                     stroke="currentColor"
                     strokeWidth="2"
                   />
                 </svg>
               </div>
-              <h3>Digital Strategy</h3>
+              <h3>Artificial Intelligence</h3>
               <p>
-                Comprehensive digital strategies to help your business achieve its goals and
-                objectives.
+                Leveraging cutting-edge AI, we offer solutions that transform business landscapes.
+                Our services include machine learning, automated analytics, and cognitive
+                technologies to enhance decision-making and operational efficiency. We build
+                intelligent systems that are not only innovative but also integral to driving
+                business value and competitive edge.
               </p>
             </div>
 
@@ -200,27 +256,177 @@ function App() {
                   />
                   <polyline points="14,2 14,8 20,8" stroke="currentColor" strokeWidth="2" />
                   <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" strokeWidth="2" />
+                  <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" strokeWidth="2" />
+                  <polyline points="10,9 9,9 8,9" stroke="currentColor" strokeWidth="2" />
                 </svg>
               </div>
-              <h3>Content Management</h3>
+              <h3>Data Extraction/Transformation</h3>
               <p>
-                Powerful content management systems that make it easy to manage your digital
-                content.
+                Data Is Every Thing And Every Where. We Have An Expert Architects And Developers For
+                Handling Large Amount Of Data. We Have Migrated Data From On-Premises To Cloud, From
+                FTP File Share To Cloud. We Have Experience Is Using Databricks, Snowflake, Azure
+                Data Factory, Many More Tools.
               </p>
             </div>
 
             <div className="service-card">
               <div className="service-icon">
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
-                  <polyline points="12,6 12,12 16,14" stroke="currentColor" strokeWidth="2" />
+                  <path
+                    d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M7 19v2"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M12 19v2"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </div>
-              <h3>24/7 Support</h3>
+              <h3>Cloud Computing</h3>
               <p>
-                Round-the-clock technical support to ensure your systems are always running
-                smoothly.
+                We Have Cloud Certified Architects And Developers Who Can Provide Complex Solution
+                To The Cloud Problems. We Design And Develop Using The Best Cloud Practises And
+                Cloud Design Patterns. We Can Provide On-Prem To Cloud Migration, Or We Can Provide
+                Cost Effective Solution For Hosting On Cloud.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section className="projects">
+        <div className="container">
+          <div className="section-header">
+            <h2>Our Projects</h2>
+            <p>
+              The objective of IT Company is to enable a large number of youth to take up
+              industry-relevant skill training that will help them in securing a better livelihood.
+            </p>
+          </div>
+
+          <div className="projects-grid">
+            <div className="project-card">
+              <div className="project-image">
+                <div className="project-placeholder">
+                  <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M3 7V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7Z"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <path
+                      d="M8 12L10.5 14.5L16 9"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div className="project-content">
+                <h3>Errands App</h3>
+                <p>
+                  Errands Is A Shopping Organization App Which Gives Customers Better Experience
+                  With Shopping. Customers Can Add Their Favorite Stores, Add Items, Check Real Time
+                  Price, Geo Fence The Items When Near The Store.
+                </p>
+                <div className="project-tags">
+                  <span>Mobile App</span>
+                  <span>Shopping</span>
+                  <span>Real-time</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <div className="project-image">
+                <div className="project-placeholder">
+                  <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <path d="M14 2V8H20" stroke="currentColor" strokeWidth="2" />
+                    <path d="M16 13H8" stroke="currentColor" strokeWidth="2" />
+                    <path d="M16 17H8" stroke="currentColor" strokeWidth="2" />
+                    <path d="M10 9H8" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                </div>
+              </div>
+              <div className="project-content">
+                <h3>PDF Chat</h3>
+                <p>
+                  PDF Chat transforms your document interactions, offering an embedded chat feature
+                  within PDF files. Collaborate effortlessly, highlight text, and discuss changes in
+                  real-time, ensuring clarity and swift feedback for teams and clients alike. It's
+                  the perfect tool for enhancing communication on documents without ever leaving the
+                  PDF environment.
+                </p>
+                <div className="project-tags">
+                  <span>Document</span>
+                  <span>Collaboration</span>
+                  <span>Real-time Chat</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <div className="project-image">
+                <div className="project-placeholder">
+                  <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                    <rect
+                      x="2"
+                      y="3"
+                      width="20"
+                      height="14"
+                      rx="2"
+                      ry="2"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" strokeWidth="2" />
+                    <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" strokeWidth="2" />
+                    <path
+                      d="M7 8L10 11L17 6"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div className="project-content">
+                <h3>Card Game</h3>
+                <p>
+                  Our Card Game service reshapes digital entertainment, presenting a collection of
+                  card games that blend strategic depth with ease of play. Users can build decks,
+                  challenge opponents, and experience new twists to beloved classics. Engaging
+                  design and interactive elements bring the virtual tabletop to life, making every
+                  match memorable.
+                </p>
+                <div className="project-tags">
+                  <span>Gaming</span>
+                  <span>Strategy</span>
+                  <span>Multiplayer</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -563,20 +769,33 @@ function App() {
                 <div className="contact-item">
                   <h4>Our Office</h4>
                   <p>
-                    123 Business Street
+                    1755 Park Street Suite 200
                     <br />
-                    Suite 100
+                    Naperville, IL 60563
                     <br />
-                    City, State 12345
+                    United States
                   </p>
                 </div>
 
                 <div className="contact-item">
                   <h4>Contact Info</h4>
                   <p>
-                    Phone: (555) 123-4567
+                    Phone: 630.754.8898
                     <br />
-                    Email: hello@company.com
+                    Fax: 877.990.4251
+                  </p>
+                </div>
+
+                <div className="contact-item">
+                  <h4>Email Contacts</h4>
+                  <p>
+                    HR: Hr@JusterNet.com
+                    <br />
+                    Accounts: Account@JusterNet.com
+                    <br />
+                    Support: Support@JusterNet.com
+                    <br />
+                    General: Naina@JusterNet.com
                   </p>
                 </div>
               </div>
