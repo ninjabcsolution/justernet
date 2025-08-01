@@ -1,11 +1,62 @@
 import React, { useState } from 'react';
+import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import './App.css';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 60 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: 'easeOut' },
+    },
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const slideInLeft = {
+    hidden: { opacity: 0, x: -60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: 'easeOut' },
+    },
+  };
+
+  const slideInRight = {
+    hidden: { opacity: 0, x: 60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: 'easeOut' },
+    },
+  };
+
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.6, ease: 'easeOut' },
+    },
   };
 
   return (
@@ -58,9 +109,16 @@ function App() {
       <section className="hero">
         <div className="container">
           <div className="hero-content">
-            <div className="hero-text">
-              <h1>We're a Team of Engineers, Designers, Product Managers, and Problem Solvers.</h1>
-              <p>
+            <motion.div
+              className="hero-text"
+              initial="hidden"
+              animate="visible"
+              variants={slideInLeft}
+            >
+              <motion.h1 variants={fadeInUp}>
+                We're a Team of Engineers, Designers, Product Managers, and Problem Solvers.
+              </motion.h1>
+              <motion.p variants={fadeInUp}>
                 We are bound by our commitment to help Teams succeed and our culture of Innovation
                 Software Development and Services, we at JusterNet Guide You Through Your Company's
                 Digital Transformation. We Provide Expert Consulting, Development, & Implementation
@@ -74,23 +132,64 @@ function App() {
                 and Load) or ELT (Extract Load and Transform)? We provide data transformation using
                 Azure Data Factory, Azure Data Bricks, Azure DataLake, Spark, Machine Learning and
                 Data Science and PowerBI tools
-              </p>
-              <div className="hero-buttons">
-                <button className="btn-primary">Get Started</button>
-                <button className="btn-secondary">Learn More</button>
-              </div>
-            </div>
-            <div className="hero-visual">
-              <div className="hero-circle">
-                <div className="circle-inner"></div>
+              </motion.p>
+              <motion.div className="hero-buttons" variants={fadeInUp}>
+                <motion.button
+                  className="btn-primary"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Get Started
+                </motion.button>
+                <motion.button
+                  className="btn-secondary"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Learn More
+                </motion.button>
+              </motion.div>
+            </motion.div>
+            <motion.div
+              className="hero-visual"
+              initial="hidden"
+              animate="visible"
+              variants={slideInRight}
+            >
+              <motion.div
+                className="hero-circle"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+              >
+                <motion.div
+                  className="circle-inner"
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                ></motion.div>
                 <div className="circle-dots">
-                  <div className="dot"></div>
-                  <div className="dot"></div>
-                  <div className="dot"></div>
-                  <div className="dot"></div>
+                  <motion.div
+                    className="dot"
+                    animate={{ scale: [1, 1.5, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 0 }}
+                  ></motion.div>
+                  <motion.div
+                    className="dot"
+                    animate={{ scale: [1, 1.5, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                  ></motion.div>
+                  <motion.div
+                    className="dot"
+                    animate={{ scale: [1, 1.5, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                  ></motion.div>
+                  <motion.div
+                    className="dot"
+                    animate={{ scale: [1, 1.5, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
+                  ></motion.div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -303,6 +402,42 @@ function App() {
                 Cost Effective Solution For Hosting On Cloud.
               </p>
             </div>
+
+            <div className="service-card">
+              <div className="service-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2L2 7L12 12L22 7L12 2Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M2 17L12 22L22 17"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M2 12L12 17L22 12"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
+                </svg>
+              </div>
+              <h3>Blockchain Development</h3>
+              <p>
+                We specialize in blockchain technology and decentralized applications (DApps). Our
+                expertise includes smart contract development, cryptocurrency solutions, NFT
+                platforms, and Web3 integration. We help businesses leverage blockchain for
+                transparency, security, and innovation in their digital transformation journey.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -427,6 +562,28 @@ function App() {
                   <span>Multiplayer</span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Channel Section */}
+      <section className="video-channel">
+        <div className="container">
+          <div className="section-header">
+            <h2>Our Channel</h2>
+            <p>Watch our latest content and insights</p>
+          </div>
+
+          <div className="video-container">
+            <div className="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/mGptIB1dEZ0"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
         </div>
@@ -607,56 +764,267 @@ function App() {
       </section>
 
       {/* Technologies Section */}
-      <section className="technologies">
+      <motion.section
+        className="technologies"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="container">
-          <div className="section-header">
+          <motion.div className="section-header" variants={fadeInUp}>
             <h2>Technologies</h2>
             <p>We work with cutting-edge technologies to deliver exceptional results</p>
-          </div>
+          </motion.div>
 
-          <div className="tech-grid">
-            <div className="tech-category">
-              <h3>Frontend</h3>
-              <div className="tech-list">
-                <span>React</span>
-                <span>Vue.js</span>
-                <span>Angular</span>
-                <span>TypeScript</span>
-              </div>
-            </div>
+          <motion.div
+            className="tech-grid"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <motion.div className="tech-category" variants={scaleIn}>
+              <motion.h3 variants={fadeInUp} whileHover={{ scale: 1.05, color: '#8b5cf6' }}>
+                Frontend
+              </motion.h3>
+              <motion.div className="tech-list" variants={staggerContainer}>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  React
+                </motion.span>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  Vue.js
+                </motion.span>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  Angular
+                </motion.span>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  TypeScript
+                </motion.span>
+              </motion.div>
+            </motion.div>
 
-            <div className="tech-category">
-              <h3>Backend</h3>
-              <div className="tech-list">
-                <span>Node.js</span>
-                <span>Python</span>
-                <span>Java</span>
-                <span>PHP</span>
-              </div>
-            </div>
+            <motion.div className="tech-category" variants={scaleIn}>
+              <motion.h3 variants={fadeInUp} whileHover={{ scale: 1.05, color: '#8b5cf6' }}>
+                Backend
+              </motion.h3>
+              <motion.div className="tech-list" variants={staggerContainer}>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  Node.js
+                </motion.span>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  Python
+                </motion.span>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  Java
+                </motion.span>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  PHP
+                </motion.span>
+              </motion.div>
+            </motion.div>
 
-            <div className="tech-category">
-              <h3>Database</h3>
-              <div className="tech-list">
-                <span>MongoDB</span>
-                <span>PostgreSQL</span>
-                <span>MySQL</span>
-                <span>Redis</span>
-              </div>
-            </div>
+            <motion.div className="tech-category" variants={scaleIn}>
+              <motion.h3 variants={fadeInUp} whileHover={{ scale: 1.05, color: '#8b5cf6' }}>
+                Database
+              </motion.h3>
+              <motion.div className="tech-list" variants={staggerContainer}>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  MongoDB
+                </motion.span>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  PostgreSQL
+                </motion.span>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  MySQL
+                </motion.span>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  Redis
+                </motion.span>
+              </motion.div>
+            </motion.div>
 
-            <div className="tech-category">
-              <h3>Cloud</h3>
-              <div className="tech-list">
-                <span>AWS</span>
-                <span>Azure</span>
-                <span>Google Cloud</span>
-                <span>Docker</span>
-              </div>
-            </div>
-          </div>
+            <motion.div className="tech-category" variants={scaleIn}>
+              <motion.h3 variants={fadeInUp} whileHover={{ scale: 1.05, color: '#8b5cf6' }}>
+                Cloud
+              </motion.h3>
+              <motion.div className="tech-list" variants={staggerContainer}>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  AWS
+                </motion.span>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  Azure
+                </motion.span>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  Google Cloud
+                </motion.span>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  Docker
+                </motion.span>
+              </motion.div>
+            </motion.div>
+
+            <motion.div className="tech-category" variants={scaleIn}>
+              <motion.h3 variants={fadeInUp} whileHover={{ scale: 1.05, color: '#8b5cf6' }}>
+                Blockchain
+              </motion.h3>
+              <motion.div className="tech-list" variants={staggerContainer}>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  Ethereum
+                </motion.span>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  Solidity
+                </motion.span>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  Web3.js
+                </motion.span>
+                <motion.span
+                  variants={fadeInUp}
+                  whileHover={{
+                    scale: 1.1,
+                    backgroundColor: 'rgba(139, 92, 246, 0.3)',
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  Smart Contracts
+                </motion.span>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Stats Section */}
       <section className="stats">
@@ -821,6 +1189,24 @@ function App() {
                   Send Message
                 </button>
               </form>
+            </div>
+          </div>
+
+          <div className="contact-map">
+            <div className="section-header">
+              <h3>Our Location</h3>
+              <p>Visit us at our Naperville office</p>
+            </div>
+            <div className="map-container">
+              <div className="map-wrapper">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d298070.9880645587!2d-88.204126991756!3d41.75083941438359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e5a5b5f4c6e5b%3A0xafe0b0b8b8ae8c87!2sNaperville%2C%20IL%2C%20USA!5e0!3m2!1sen!2sca!4v1646061293099!5m2!1sen!2sca"
+                  title="JusterNet Office Location"
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
