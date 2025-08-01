@@ -880,6 +880,8 @@ section {
   border-radius: 16px;
   padding: 2rem;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .testimonial-card:hover {
@@ -891,12 +893,16 @@ section {
 .testimonial-rating {
   margin-bottom: 1.5rem;
   text-align: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .stars {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .stars span {
@@ -905,6 +911,7 @@ section {
   letter-spacing: 3px;
   text-shadow: 0 0 15px rgba(251, 191, 36, 0.5);
   filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.3));
+  display: inline-block;
 }
 
 .testimonial-author {
