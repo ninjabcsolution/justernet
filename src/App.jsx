@@ -12,10 +12,6 @@ function App() {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   // Go to top functionality
   useEffect(() => {
     const handleScroll = () => {
@@ -35,11 +31,11 @@ function App() {
 
   // Animation variants
   const fadeInUp = {
-    hidden: { opacity: 0, y: 60 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.3, ease: 'easeOut' },
     },
   };
 
@@ -110,7 +106,7 @@ function App() {
 
   // Work Process Step Component
   const ProcessStep = ({ number, badge, title, description, className, variants }) => (
-    <motion.div className={`process-step ${className}`} variants={variants}>
+    <motion.div className={`process-step ${className}`}>
       <motion.div className="step-number" whileHover={{ scale: 1.1, rotate: 5 }}>
         {number}
       </motion.div>
@@ -295,7 +291,7 @@ function App() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <div className="container">
-          <motion.div className="section-header" variants={fadeInUp}>
+          <motion.div className="section-header">
             <h2>Our Services</h2>
             <p>
               We help you to build high-quality digital solutions and products as well as deliver a
@@ -1101,7 +1097,7 @@ function App() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <div className="container">
-          <motion.div className="section-header" variants={fadeInUp}>
+          <motion.div className="section-header">
             <h2>Our Work Process</h2>
             <p>A streamlined approach that ensures efficient delivery and exceptional results</p>
           </motion.div>
@@ -1178,7 +1174,7 @@ function App() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <div className="container">
-          <motion.div className="section-header" variants={fadeInUp}>
+          <motion.div className="section-header">
             <h2>Technologies</h2>
             <p>
               Cutting-edge technologies and frameworks we use to build exceptional digital solutions
