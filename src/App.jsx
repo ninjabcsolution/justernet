@@ -6,13 +6,43 @@ import JusterNetLogo from './JusterNetLogo_V1';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './App.css';
-import { Link } from 'react-router-dom';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import Swal from 'sweetalert2';
+import 'sweetalert2/src/sweetalert2.scss';
+import emailjs from '@emailjs/browser';
+import { sendContactEmail } from './sendgridService';
+
+const SERVICE_ID = 'service_nvwgzc6';
+const TEMPLATE_ID = 'template_3uc9jyo';
+const PUBLIC_KEY = 'QEM1vHqgf3x2SPtnR';
 
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showGoToTop, setShowGoToTop] = useState(false);
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+
+  const formik = useFormik({
+    initialValues: {
+      fullName: '',
+      email: '',
+      subject: '',
+      message: '',
+    },
+    validationSchema: Yup.object({
+      fullName: Yup.string()
+        .min(3, 'Must be 3 characters or more')
+        .max(20, 'Must be 20 characters or less')
+        .required('Required'),
+      email: Yup.string().email('Invalid email address').required('Required'),
+      subject: Yup.string()
+        .min(3, 'Must be 3 characters or more')
+        .max(20, 'Must be 20 characters or less')
+        .required('Required'),
+      message: Yup.string()
+        .min(3, 'Must be 3 characters or more')
+        .max(20, 'Must be 20 characters or less')
+        .required('Required'),
+    }),
+  });
 
   // Go to top functionality
   useEffect(() => {
@@ -104,6 +134,86 @@ function App() {
         },
       },
     ],
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(formik.isValid, formik.errors);
+    if (formik.touched && formik.isValid) {
+      try {
+        const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, formik.values, {
+          publicKey: PUBLIC_KEY,
+        });
+
+        if (response.status !== 200) {
+          return Swal.fire({
+            icon: 'error',
+            title: 'Failed!',
+            text: `Failed to send email. Please try again later.`,
+          });
+        }
+
+        formik.resetForm();
+
+        return Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: `Your email was sent successfully!`,
+        });
+      } catch (error) {
+        // Handle specific EmailJS errors
+        if (error && error.message && typeof error.message === 'string') {
+          if (error.message.includes('Invalid template')) {
+            return Swal.fire({
+              icon: 'error',
+              title: 'Failed!',
+              text: `Email template configuration error. Please contact support.`,
+            });
+          }
+          if (error.message.includes('Invalid service')) {
+            return Swal.fire({
+              icon: 'error',
+              title: 'Failed!',
+              text: `Email service configuration error. Please contact support.`,
+            });
+          }
+          if (error.message.includes('Invalid public key')) {
+            return Swal.fire({
+              icon: 'error',
+              title: 'Failed!',
+              text: `Email service configuration error. Please contact support.`,
+            });
+          }
+        }
+      }
+    }
+
+    // try {
+    //   const result = await sendContactEmail(formik.values);
+
+    //   if (result.success) {
+    //     formik.resetForm();
+    //     return Swal.fire({
+    //       icon: 'success',
+    //       title: 'Success!',
+    //       text: `Your email was sent successfully!`,
+    //     });
+    //   } else {
+    //     return Swal.fire({
+    //       icon: 'error',
+    //       title: 'Failed!',
+    //       text: result.message || 'Failed to send message. Please try again later.',
+    //     });
+    //   }
+    // } catch (error) {
+    //   return Swal.fire({
+    //     icon: 'error',
+    //     title: 'Failed!',
+    //     text: 'An unexpected error occurred. Please try again later.',
+    //   });
+    // } finally {
+    // }
+    // }
   };
 
   // Work Process Step Component
@@ -1454,18 +1564,58 @@ function App() {
             </motion.div>
 
             <motion.div className="contact-form" variants={slideInRight}>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <input type="text" placeholder="Your Name" required />
+                  <input
+                    {...formik.getFieldProps('fullName')}
+                    type="text"
+                    placeholder="Your Name"
+                    required
+                  />
+                  {formik.touched.fullName && formik.errors.fullName && (
+                    <span className="min-h-[20px] absolute start-0 top-[100%] text-sm text-[#ff0000] error_message">
+                      {formik.errors.fullName}
+                    </span>
+                  )}
                 </div>
                 <div className="form-group">
-                  <input type="email" placeholder="Your Email" required />
+                  <input
+                    {...formik.getFieldProps('email')}
+                    type="email"
+                    placeholder="Your Email"
+                    required
+                  />
+                  {formik.touched.email && formik.errors.email && (
+                    <span className="min-h-[20px] absolute start-0 top-[100%] text-sm text-[#ff0000] error_message">
+                      {formik.errors.email}
+                    </span>
+                  )}
                 </div>
                 <div className="form-group">
-                  <input type="text" placeholder="Subject" required />
+                  <input
+                    {...formik.getFieldProps('subject')}
+                    type="text"
+                    placeholder="Subject"
+                    required
+                  />
+                  {formik.touched.subject && formik.errors.subject && (
+                    <span className="min-h-[20px] absolute start-0 top-[100%] text-sm text-[#ff0000] error_message">
+                      {formik.errors.subject}
+                    </span>
+                  )}
                 </div>
                 <div className="form-group">
-                  <textarea rows="5" placeholder="Your Message" required></textarea>
+                  <textarea
+                    {...formik.getFieldProps('message')}
+                    rows="5"
+                    placeholder="Your Message"
+                    required
+                  ></textarea>
+                  {formik.touched.message && formik.errors.message && (
+                    <span className="min-h-[20px] absolute start-0 top-[100%] text-sm text-[#ff0000] error_message">
+                      {formik.errors.message}
+                    </span>
+                  )}
                 </div>
                 <motion.button
                   type="submit"
