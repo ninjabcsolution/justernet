@@ -6,6 +6,7 @@ import JusterNetLogo from './JusterNetLogo_V1';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './App.css';
+import { Link } from 'react-router-dom';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -166,91 +167,22 @@ function App() {
                 real business growth.
               </motion.p>
               <motion.div className="hero-buttons" variants={fadeInUp}>
-                <motion.button
+                {/* <motion.button
                   className="btn-primary"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Start Your Project
-                </motion.button>
-                <motion.button
+                </motion.button> */}
+                <motion.a
+                  href="#portfolio"
                   className="btn-secondary"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   View Our Work
-                </motion.button>
+                </motion.a>
               </motion.div>
-            </motion.div>
-            <motion.div
-              className="hero-visual"
-              initial="hidden"
-              animate="visible"
-              variants={slideInRight}
-            >
-              <div className="earth-satellite-container">
-                {/* Earth */}
-                <motion.div
-                  className="earth"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-                >
-                  <div className="earth-surface">
-                    <div className="continent continent-1"></div>
-                    <div className="continent continent-2"></div>
-                    <div className="continent continent-3"></div>
-                  </div>
-                  <div className="earth-atmosphere"></div>
-                </motion.div>
-
-                {/* Satellite Orbit */}
-                <motion.div
-                  className="satellite-orbit"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-                >
-                  <motion.div
-                    className="satellite"
-                    animate={{
-                      rotate: -360,
-                      scale: [1, 1.1, 1],
-                    }}
-                    transition={{
-                      rotate: { duration: 15, repeat: Infinity, ease: 'linear' },
-                      scale: { duration: 3, repeat: Infinity, ease: 'easeInOut' },
-                    }}
-                  >
-                    <div className="satellite-body"></div>
-                    <div className="satellite-panel satellite-panel-left"></div>
-                    <div className="satellite-panel satellite-panel-right"></div>
-                    <div className="satellite-antenna"></div>
-                  </motion.div>
-                </motion.div>
-
-                {/* Stars */}
-                <div className="stars">
-                  <motion.div
-                    className="star star-1"
-                    animate={{ opacity: [0.3, 1, 0.3] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 0 }}
-                  ></motion.div>
-                  <motion.div
-                    className="star star-2"
-                    animate={{ opacity: [0.5, 1, 0.5] }}
-                    transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
-                  ></motion.div>
-                  <motion.div
-                    className="star star-3"
-                    animate={{ opacity: [0.4, 1, 0.4] }}
-                    transition={{ duration: 2.5, repeat: Infinity, delay: 1 }}
-                  ></motion.div>
-                  <motion.div
-                    className="star star-4"
-                    animate={{ opacity: [0.6, 1, 0.6] }}
-                    transition={{ duration: 1.8, repeat: Infinity, delay: 1.5 }}
-                  ></motion.div>
-                </div>
-              </div>
             </motion.div>
           </div>
         </div>
@@ -309,9 +241,9 @@ function App() {
               </motion.div>
               <h3>Artificial Intelligence</h3>
               <p>
-                We design and deploy AI-driven solutions that revolutionize how businesses operate. 
-                From predictive analytics and natural language processing to computer vision and 
-                intelligent automation, our expertise helps organizations unlock deeper insights, 
+                We design and deploy AI-driven solutions that revolutionize how businesses operate.
+                From predictive analytics and natural language processing to computer vision and
+                intelligent automation, our expertise helps organizations unlock deeper insights,
                 streamline processes, and accelerate innovation.
               </p>
             </motion.div>
@@ -340,50 +272,55 @@ function App() {
                   <line x1="16" y1="6" x2="14" y2="12" stroke="currentColor" strokeWidth="2" />
                   <line x1="8" y1="18" x2="10" y2="12" stroke="currentColor" strokeWidth="2" />
                   <line x1="16" y1="18" x2="14" y2="12" stroke="currentColor" strokeWidth="2" />
-                  <line x1="6" y1="6" x2="18" y2="6" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
-                  <line x1="6" y1="18" x2="18" y2="18" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
+                  <line
+                    x1="6"
+                    y1="6"
+                    x2="18"
+                    y2="6"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                    strokeDasharray="2 2"
+                  />
+                  <line
+                    x1="6"
+                    y1="18"
+                    x2="18"
+                    y2="18"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                    strokeDasharray="2 2"
+                  />
                 </svg>
               </motion.div>
               <h3>Machine Learning</h3>
               <p>
-                We design, build, and deploy machine learning solutions that transform data into actionable insights. Our expertise spans supervised and unsupervised learning, deep learning, natural language processing, and predictive analytics. From data preprocessing and feature engineering to model training, optimization, and deployment, we create scalable ML systems that enable accurate predictions, uncover hidden patterns, and automate complex decision-making—empowering businesses to innovate with confidence.
-               
+                We design, build, and deploy machine learning solutions that transform data into
+                actionable insights. Our expertise spans supervised and unsupervised learning, deep
+                learning, natural language processing, and predictive analytics. From data
+                preprocessing and feature engineering to model training, optimization, and
+                deployment, we create scalable ML systems that enable accurate predictions, uncover
+                hidden patterns, and automate complex decision-making—empowering businesses to
+                innovate with confidence.
               </p>
             </motion.div>
 
             <motion.div className="service-card" variants={scaleIn}>
               <motion.div className="service-icon" whileHover={{ scale: 1.1, rotate: 5 }}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M4 6H20V18H4V6Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                  <path
-                    d="M8 6V18"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                  <path
-                    d="M16 6V18"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                  <path
-                    d="M4 10H20"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                  <path
-                    d="M4 14H20"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
+                  <path d="M4 6H20V18H4V6Z" stroke="currentColor" strokeWidth="2" />
+                  <path d="M8 6V18" stroke="currentColor" strokeWidth="2" />
+                  <path d="M16 6V18" stroke="currentColor" strokeWidth="2" />
+                  <path d="M4 10H20" stroke="currentColor" strokeWidth="2" />
+                  <path d="M4 14H20" stroke="currentColor" strokeWidth="2" />
                 </svg>
               </motion.div>
               <h3>Blockchain Development</h3>
               <p>
-                We deliver end-to-end blockchain solutions, from smart contract development and decentralized applications (DApps) to NFT platforms, cryptocurrency systems, and Web3 integration. Our expertise ensures secure, scalable, and transparent implementations that drive innovation, enhance efficiency, and build trust through distributed ledger technology.
+                We deliver end-to-end blockchain solutions, from smart contract development and
+                decentralized applications (DApps) to NFT platforms, cryptocurrency systems, and
+                Web3 integration. Our expertise ensures secure, scalable, and transparent
+                implementations that drive innovation, enhance efficiency, and build trust through
+                distributed ledger technology.
               </p>
             </motion.div>
 
@@ -489,8 +426,6 @@ function App() {
               </p>
             </motion.div>
 
-           
-
             <motion.div className="service-card" variants={scaleIn}>
               <motion.div className="service-icon" whileHover={{ scale: 1.1, rotate: 5 }}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
@@ -547,7 +482,6 @@ function App() {
                 solutions.
               </p>
             </motion.div>
-
           </motion.div>
         </div>
       </motion.section>
@@ -564,30 +498,30 @@ function App() {
           </div>
 
           <div className="projects-grid">
-            
             <div className="project-card">
               <div className="project-image">
-                  <div className="project-placeholder">
-                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                <div className="project-placeholder">
+                  <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
                     <path
-                    d="M6 6H4V4H2V6H3L6.6 14.59L5.25 16.04C5.09 16.22 5 16.47 5 16.75C5 17.44 5.56 18 6.25 18H19V16H6.42C6.28 16 6.17 15.89 6.17 15.75C6.17 15.68 6.2 15.61 6.25 15.55L7.1 14.5H15.55C16.3 14.5 16.96 14.05 17.25 13.37L20.88 5.99C20.95 5.84 21 5.67 21 5.5C21 4.67 20.33 4 19.5 4H6.21L5.27 2H2V4H4L6 6ZM7.16 12.5L6 9H18.31L15.9 12.5H7.16ZM7 20C6.45 20 6 20.45 6 21C6 21.55 6.45 22 7 22C7.55 22 8 21.55 8 21C8 20.45 7.55 20 7 20ZM17 20C16.45 20 16 20.45 16 21C16 21.55 16.45 22 17 22C17.55 22 18 21.55 18 21C18 20.45 17.55 20 17 20Z"
-                    fill="currentColor"
+                      d="M6 6H4V4H2V6H3L6.6 14.59L5.25 16.04C5.09 16.22 5 16.47 5 16.75C5 17.44 5.56 18 6.25 18H19V16H6.42C6.28 16 6.17 15.89 6.17 15.75C6.17 15.68 6.2 15.61 6.25 15.55L7.1 14.5H15.55C16.3 14.5 16.96 14.05 17.25 13.37L20.88 5.99C20.95 5.84 21 5.67 21 5.5C21 4.67 20.33 4 19.5 4H6.21L5.27 2H2V4H4L6 6ZM7.16 12.5L6 9H18.31L15.9 12.5H7.16ZM7 20C6.45 20 6 20.45 6 21C6 21.55 6.45 22 7 22C7.55 22 8 21.55 8 21C8 20.45 7.55 20 7 20ZM17 20C16.45 20 16 20.45 16 21C16 21.55 16.45 22 17 22C17.55 22 18 21.55 18 21C18 20.45 17.55 20 17 20Z"
+                      fill="currentColor"
                     />
-                    </svg>
-                  </div>
+                  </svg>
                 </div>
+              </div>
 
-                <div className="project-content">
-                  <h3>ShopErrands</h3>
-                  <p>
-                  ShopErrands is a smart shopping and productivity app designed to streamline your errands. 
-                  Users can add favorite stores, create itemized lists, view real-time prices, and receive geo-fenced alerts when near a relevant store.
-                  </p>
-                  <div className="project-tags">
-                    <span>Shopping</span>
-                    <span>Productivity</span>
-                    <span>Smart Lists</span>
-                  </div>
+              <div className="project-content">
+                <h3>ShopErrands</h3>
+                <p>
+                  ShopErrands is a smart shopping and productivity app designed to streamline your
+                  errands. Users can add favorite stores, create itemized lists, view real-time
+                  prices, and receive geo-fenced alerts when near a relevant store.
+                </p>
+                <div className="project-tags">
+                  <span>Shopping</span>
+                  <span>Productivity</span>
+                  <span>Smart Lists</span>
+                </div>
               </div>
             </div>
 
@@ -613,7 +547,9 @@ function App() {
               <div className="project-content">
                 <h3>BarCodeScanner</h3>
                 <p>
-                  BarCode Scanner is a fast and lightweight app for scanning barcodes on products, packages, and documents. Instantly retrieve data, prices, or share scanned content with others.
+                  BarCode Scanner is a fast and lightweight app for scanning barcodes on products,
+                  packages, and documents. Instantly retrieve data, prices, or share scanned content
+                  with others.
                 </p>
                 <div className="project-tags">
                   <span>Barcode</span>
@@ -623,7 +559,6 @@ function App() {
                 </div>
               </div>
             </div>
-
 
             {/* Blockchain & Crypto Projects */}
             <div className="project-card">
@@ -648,7 +583,7 @@ function App() {
                   </svg>
                 </div>
               </div>
-             
+
               <div className="project-content">
                 <h3>KrumFi</h3>
                 <p>
@@ -664,9 +599,6 @@ function App() {
             </div>
 
             <div className="project-card">
-
-              
-
               <div className="project-image">
                 <div className="project-placeholder">
                   <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
@@ -1477,9 +1409,7 @@ function App() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-      >
-  
-      </motion.section>
+      ></motion.section>
 
       {/* Contact Section */}
       <motion.section
