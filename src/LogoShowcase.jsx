@@ -1,5 +1,5 @@
 import React from 'react';
-import JusterNetLogo from './JusterNetLogo';
+import JusterNetLogo from './JusterNetLogo_V1';
 import './App.css';
 
 const LogoShowcase = () => {
@@ -325,7 +325,7 @@ const LogoShowcase = () => {
                   overflow: 'auto',
                 }}
               >
-                {`import JusterNetLogo from './JusterNetLogo';
+                {`import JusterNetLogo from './JusterNetLogo_V1';
 
 // Default logo
 <JusterNetLogo />

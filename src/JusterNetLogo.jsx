@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Enhanced JusterNet Logo with multiple variations
-const JusterNetLogo = ({ variant = 'default', size = 'medium', className = '' }) => {
+const JusterNetLogo = ({ variant = 'default', size = 'small', className = '' }) => {
   const sizes = {
     small: { width: 100, height: 32, fontSize: 10 },
     medium: { width: 140, height: 45, fontSize: 12 },

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Slider from 'react-slick';
 import Header from './Header';
-import JusterNetLogo from './JusterNetLogo';
+import JusterNetLogo from './JusterNetLogo_V1';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './App.css';
@@ -285,6 +285,112 @@ function App() {
               <motion.div className="service-icon" whileHover={{ scale: 1.1, rotate: 5 }}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
                   <path
+                    d="M9.5 2A2.5 2.5 0 0 1 12 4.5V9a2.5 2.5 0 0 1-4.96.44L7 9.5A2.5 2.5 0 0 1 9.5 2Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M14.5 6A2.5 2.5 0 0 1 17 8.5a2.5 2.5 0 0 1-2.5 2.5h-.5A2.5 2.5 0 0 1 12 8.5V6a2.5 2.5 0 0 1 2.5 0Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M12 12.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path d="M8.5 12H12" stroke="currentColor" strokeWidth="2" />
+                  <path
+                    d="M12 16.5H8.5A2.5 2.5 0 1 1 8.5 12"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </motion.div>
+              <h3>Artificial Intelligence</h3>
+              <p>
+                We design and deploy AI-driven solutions that revolutionize how businesses operate. 
+                From predictive analytics and natural language processing to computer vision and 
+                intelligent automation, our expertise helps organizations unlock deeper insights, 
+                streamline processes, and accelerate innovation.
+              </p>
+            </motion.div>
+            <motion.div className="service-card" variants={scaleIn}>
+              <motion.div className="service-icon" whileHover={{ scale: 1.1, rotate: 5 }}>
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  {/* Central Node */}
+                  <circle cx="12" cy="12" r="2" stroke="currentColor" strokeWidth="2" />
+                  {/* Top Left Node */}
+                  <circle cx="6" cy="6" r="2" stroke="currentColor" strokeWidth="2" />
+                  {/* Top Right Node */}
+                  <circle cx="18" cy="6" r="2" stroke="currentColor" strokeWidth="2" />
+                  {/* Bottom Left Node */}
+                  <circle cx="6" cy="18" r="2" stroke="currentColor" strokeWidth="2" />
+                  {/* Bottom Right Node */}
+                  <circle cx="18" cy="18" r="2" stroke="currentColor" strokeWidth="2" />
+
+                  {/* Connections */}
+                  <line x1="8" y1="6" x2="10" y2="12" stroke="currentColor" strokeWidth="2" />
+                  <line x1="16" y1="6" x2="14" y2="12" stroke="currentColor" strokeWidth="2" />
+                  <line x1="8" y1="18" x2="10" y2="12" stroke="currentColor" strokeWidth="2" />
+                  <line x1="16" y1="18" x2="14" y2="12" stroke="currentColor" strokeWidth="2" />
+                  <line x1="6" y1="6" x2="18" y2="6" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
+                  <line x1="6" y1="18" x2="18" y2="18" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
+                </svg>
+              </motion.div>
+              <h3>Machine Learning</h3>
+              <p>
+                We design, build, and deploy machine learning solutions that transform data into actionable insights. Our expertise spans supervised and unsupervised learning, deep learning, natural language processing, and predictive analytics. From data preprocessing and feature engineering to model training, optimization, and deployment, we create scalable ML systems that enable accurate predictions, uncover hidden patterns, and automate complex decision-making—empowering businesses to innovate with confidence.
+               
+              </p>
+            </motion.div>
+
+            <motion.div className="service-card" variants={scaleIn}>
+              <motion.div className="service-icon" whileHover={{ scale: 1.1, rotate: 5 }}>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M4 6H20V18H4V6Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M8 6V18"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M16 6V18"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M4 10H20"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M4 14H20"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </motion.div>
+              <h3>Blockchain Development</h3>
+              <p>
+                We deliver end-to-end blockchain solutions, from smart contract development and decentralized applications (DApps) to NFT platforms, cryptocurrency systems, and Web3 integration. Our expertise ensures secure, scalable, and transparent implementations that drive innovation, enhance efficiency, and build trust through distributed ledger technology.
+              </p>
+            </motion.div>
+
+            <motion.div className="service-card" variants={scaleIn}>
+              <motion.div className="service-icon" whileHover={{ scale: 1.1, rotate: 5 }}>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                  <path
                     d="M12 2L2 7L12 12L22 7L12 2Z"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -383,39 +489,7 @@ function App() {
               </p>
             </motion.div>
 
-            <motion.div className="service-card" variants={scaleIn}>
-              <motion.div className="service-icon" whileHover={{ scale: 1.1, rotate: 5 }}>
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M9.5 2A2.5 2.5 0 0 1 12 4.5V9a2.5 2.5 0 0 1-4.96.44L7 9.5A2.5 2.5 0 0 1 9.5 2Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                  <path
-                    d="M14.5 6A2.5 2.5 0 0 1 17 8.5a2.5 2.5 0 0 1-2.5 2.5h-.5A2.5 2.5 0 0 1 12 8.5V6a2.5 2.5 0 0 1 2.5 0Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                  <path
-                    d="M12 12.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                  <path d="M8.5 12H12" stroke="currentColor" strokeWidth="2" />
-                  <path
-                    d="M12 16.5H8.5A2.5 2.5 0 1 1 8.5 12"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                </svg>
-              </motion.div>
-              <h3>Artificial Intelligence</h3>
-              <p>
-                Leveraging cutting-edge AI, we offer solutions that transform business landscapes.
-                Our services include machine learning, automated analytics, and cognitive
-                technologies to enhance decision-making and operational efficiency.
-              </p>
-            </motion.div>
+           
 
             <motion.div className="service-card" variants={scaleIn}>
               <motion.div className="service-icon" whileHover={{ scale: 1.1, rotate: 5 }}>
@@ -474,40 +548,6 @@ function App() {
               </p>
             </motion.div>
 
-            <motion.div className="service-card" variants={scaleIn}>
-              <motion.div className="service-icon" whileHover={{ scale: 1.1, rotate: 5 }}>
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M12 2L2 7L12 12L22 7L12 2Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M2 17L12 22L22 17"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M2 12L12 17L22 12"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
-                </svg>
-              </motion.div>
-              <h3>Blockchain Development</h3>
-              <p>
-                We specialize in blockchain technology and decentralized applications (DApps). Our
-                expertise includes smart contract development, cryptocurrency solutions, NFT
-                platforms, and Web3 integration for transparency, security, and innovation.
-              </p>
-            </motion.div>
           </motion.div>
         </div>
       </motion.section>
@@ -524,6 +564,67 @@ function App() {
           </div>
 
           <div className="projects-grid">
+            
+            <div className="project-card">
+              <div className="project-image">
+                  <div className="project-placeholder">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                    <path
+                    d="M6 6H4V4H2V6H3L6.6 14.59L5.25 16.04C5.09 16.22 5 16.47 5 16.75C5 17.44 5.56 18 6.25 18H19V16H6.42C6.28 16 6.17 15.89 6.17 15.75C6.17 15.68 6.2 15.61 6.25 15.55L7.1 14.5H15.55C16.3 14.5 16.96 14.05 17.25 13.37L20.88 5.99C20.95 5.84 21 5.67 21 5.5C21 4.67 20.33 4 19.5 4H6.21L5.27 2H2V4H4L6 6ZM7.16 12.5L6 9H18.31L15.9 12.5H7.16ZM7 20C6.45 20 6 20.45 6 21C6 21.55 6.45 22 7 22C7.55 22 8 21.55 8 21C8 20.45 7.55 20 7 20ZM17 20C16.45 20 16 20.45 16 21C16 21.55 16.45 22 17 22C17.55 22 18 21.55 18 21C18 20.45 17.55 20 17 20Z"
+                    fill="currentColor"
+                    />
+                    </svg>
+                  </div>
+                </div>
+
+                <div className="project-content">
+                  <h3>ShopErrands</h3>
+                  <p>
+                  ShopErrands is a smart shopping and productivity app designed to streamline your errands. 
+                  Users can add favorite stores, create itemized lists, view real-time prices, and receive geo-fenced alerts when near a relevant store.
+                  </p>
+                  <div className="project-tags">
+                    <span>Shopping</span>
+                    <span>Productivity</span>
+                    <span>Smart Lists</span>
+                  </div>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <div className="project-image">
+                <div className="project-placeholder">
+                  {/* Barcode Icon */}
+                  <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                    <rect x="1" y="4" width="1" height="16" fill="currentColor" />
+                    <rect x="3" y="4" width="0.5" height="16" fill="currentColor" />
+                    <rect x="5" y="4" width="1" height="16" fill="currentColor" />
+                    <rect x="7" y="4" width="0.5" height="16" fill="currentColor" />
+                    <rect x="9" y="4" width="1.5" height="16" fill="currentColor" />
+                    <rect x="12" y="4" width="0.5" height="16" fill="currentColor" />
+                    <rect x="14" y="4" width="1" height="16" fill="currentColor" />
+                    <rect x="16" y="4" width="0.5" height="16" fill="currentColor" />
+                    <rect x="18" y="4" width="1" height="16" fill="currentColor" />
+                    <rect x="20" y="4" width="0.5" height="16" fill="currentColor" />
+                  </svg>
+                </div>
+              </div>
+
+              <div className="project-content">
+                <h3>BarCodeScanner</h3>
+                <p>
+                  BarCode Scanner is a fast and lightweight app for scanning barcodes on products, packages, and documents. Instantly retrieve data, prices, or share scanned content with others.
+                </p>
+                <div className="project-tags">
+                  <span>Barcode</span>
+                  <span>Scan</span>
+                  <span>Productivity</span>
+                  <span>Share</span>
+                </div>
+              </div>
+            </div>
+
+
             {/* Blockchain & Crypto Projects */}
             <div className="project-card">
               <div className="project-image">
@@ -547,6 +648,7 @@ function App() {
                   </svg>
                 </div>
               </div>
+             
               <div className="project-content">
                 <h3>KrumFi</h3>
                 <p>
@@ -562,6 +664,9 @@ function App() {
             </div>
 
             <div className="project-card">
+
+              
+
               <div className="project-image">
                 <div className="project-placeholder">
                   <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
@@ -601,6 +706,7 @@ function App() {
                   </svg>
                 </div>
               </div>
+
               <div className="project-content">
                 <h3>HIxLo (HighVsLow)</h3>
                 <p>
@@ -1372,238 +1478,7 @@ function App() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="container">
-          <motion.div className="section-header" variants={fadeInUp}>
-            <h2>Testimonials</h2>
-            <p>What our clients say about working with us</p>
-          </motion.div>
-
-          <motion.div
-            className="testimonials-slider-container"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <Slider {...testimonialSettings}>
-              <div className="testimonial-slide">
-                <div className="testimonial-card">
-                  <div className="testimonial-rating">
-                    <div className="stars">
-                      <span>★★★★★</span>
-                    </div>
-                  </div>
-                  <div className="testimonial-author">
-                    <div className="author-avatar">
-                      <span>JB</span>
-                    </div>
-                    <div className="author-info">
-                      <h4>Jürgen Bröker</h4>
-                      <span>Executive Director, Healthcare Platform Co.</span>
-                    </div>
-                  </div>
-                  <div className="testimonial-content">
-                    <p>
-                      "Darly Solutions' work so far inspires confidence, as they're skilled and
-                      trustworthy. The health platform is incredibly happy with their work. The team
-                      at Darly is communicative, responsive, and responsible. I'd recommend them to
-                      people looking to do more than build a simple little software."
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="testimonial-slide">
-                <div className="testimonial-card">
-                  <div className="testimonial-rating">
-                    <div className="stars">
-                      <span>★★★★★</span>
-                    </div>
-                  </div>
-                  <div className="testimonial-author">
-                    <div className="author-avatar">
-                      <span>PF</span>
-                    </div>
-                    <div className="author-info">
-                      <h4>PJ Fisher</h4>
-                      <span>Head of Tech, Software Consulting Firm</span>
-                    </div>
-                  </div>
-                  <div className="testimonial-content">
-                    <p>
-                      "By collaborating with Darly Solutions, there is a significant improvement in
-                      the project's quality of codes compared to their original codebase. They lead
-                      efficient project management and keep the client updated with their reports.
-                      They're a flexible team that delivers promising results."
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="testimonial-slide">
-                <div className="testimonial-card">
-                  <div className="testimonial-rating">
-                    <div className="stars">
-                      <span>★★★★★</span>
-                    </div>
-                  </div>
-                  <div className="testimonial-author">
-                    <div className="author-avatar">
-                      <span>IN</span>
-                    </div>
-                    <div className="author-info">
-                      <h4>Inna Netudikhata</h4>
-                      <span>CEO, Mama Travel</span>
-                    </div>
-                  </div>
-                  <div className="testimonial-content">
-                    <p>
-                      "Darly Solutions was able to develop the site with all functions running. The
-                      team was responsive throughout the engagement. They excelled at scheduling and
-                      delivered projects on the specified timeline. The whole team was a pleasure to
-                      work with."
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="testimonial-slide">
-                <div className="testimonial-card">
-                  <div className="testimonial-rating">
-                    <div className="stars">
-                      <span>★★★★★</span>
-                    </div>
-                  </div>
-                  <div className="testimonial-author">
-                    <div className="author-avatar">
-                      <span>FL</span>
-                    </div>
-                    <div className="author-info">
-                      <h4>Felix Leontyev</h4>
-                      <span>Head of Technology, PSS AG</span>
-                    </div>
-                  </div>
-                  <div className="testimonial-content">
-                    <p>
-                      "The quality of their work is very high, and we get very good customer
-                      feedback on what our site looks like. They're very reliable and have a great
-                      overview of the technologies they're using. They meet our deadlines and are
-                      very accurate with their time estimations."
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="testimonial-slide">
-                <div className="testimonial-card">
-                  <div className="testimonial-rating">
-                    <div className="stars">
-                      <span>★★★★★</span>
-                    </div>
-                  </div>
-                  <div className="testimonial-author">
-                    <div className="author-avatar">
-                      <span>GL</span>
-                    </div>
-                    <div className="author-info">
-                      <h4>Gordon Lang</h4>
-                      <span>CTO, Vidina Solutions Ltd</span>
-                    </div>
-                  </div>
-                  <div className="testimonial-content">
-                    <p>
-                      "LLC Darly Solutions are highly skilled at UI/UX and follow very good
-                      engineering standards, and have been very professional in its approach to all
-                      the work to date. They have taken ownership of the work in way that
-                      demonstrates how much they value the work they are doing."
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="testimonial-slide">
-                <div className="testimonial-card">
-                  <div className="testimonial-rating">
-                    <div className="stars">
-                      <span>★★★★★</span>
-                    </div>
-                  </div>
-                  <div className="testimonial-author">
-                    <div className="author-avatar">
-                      <span>PN</span>
-                    </div>
-                    <div className="author-info">
-                      <h4>Piotr Nowakowski</h4>
-                      <span>Founder, 79 Characters, Inc.</span>
-                    </div>
-                  </div>
-                  <div className="testimonial-content">
-                    <p>
-                      "Darly Solutions developed the app in a quick manner, and the code quality was
-                      excellent. The professional team was committed to building a successful
-                      product. The code quality was good, and the app has been built in a little
-                      more than 1 month."
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="testimonial-slide">
-                <div className="testimonial-card">
-                  <div className="testimonial-rating">
-                    <div className="stars">
-                      <span>★★★★★</span>
-                    </div>
-                  </div>
-                  <div className="testimonial-author">
-                    <div className="author-avatar">
-                      <span>MS</span>
-                    </div>
-                    <div className="author-info">
-                      <h4>Maiza Simeon</h4>
-                      <span>Founder, Food App Startup</span>
-                    </div>
-                  </div>
-                  <div className="testimonial-content">
-                    <p>
-                      "Darly Solutions' work helped my business tremendously. They were able to
-                      identify key areas for growth and improvement. The team was communicative and
-                      professional throughout the entire engagement. They're really professional and
-                      they know what they're doing."
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="testimonial-slide">
-                <div className="testimonial-card">
-                  <div className="testimonial-rating">
-                    <div className="stars">
-                      <span>★★★★★</span>
-                    </div>
-                  </div>
-                  <div className="testimonial-author">
-                    <div className="author-avatar">
-                      <span>KD</span>
-                    </div>
-                    <div className="author-info">
-                      <h4>Kieran Donovan</h4>
-                      <span>Managing Director, Corporate Advisory Firm</span>
-                    </div>
-                  </div>
-                  <div className="testimonial-content">
-                    <p>
-                      "The responsiveness, attention to detail and high-level communication from
-                      Darly Solutions was outstanding. They were highly responsive, worked to tight
-                      deadlines and provided great feedback and communication throughout the entire
-                      project."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Slider>
-          </motion.div>
-        </div>
+  
       </motion.section>
 
       {/* Contact Section */}
@@ -1627,9 +1502,9 @@ function App() {
                 <div className="contact-item">
                   <h4>Our Office</h4>
                   <p>
-                    123 Innovation Street
+                    1755 Park Street Suite 200
                     <br />
-                    Tech District, TD 12345
+                    Naperville, IL 60563
                     <br />
                     United States
                   </p>
@@ -1640,7 +1515,7 @@ function App() {
                   <p>
                     Email: hello@justernet.com
                     <br />
-                    Phone: +1 (555) 123-4567
+                    Phone: +1 (630) 754-8898
                     <br />
                     Skype: justernet.team
                   </p>
@@ -1746,7 +1621,7 @@ function App() {
           </div>
 
           <div className="footer-bottom">
-            <p>&copy; 2024 JusterNet. All rights reserved.</p>
+            <p>&copy; 2025 JusterNet Corporation. All rights reserved.</p>
             <div className="footer-links">
               <a href="/privacy">Privacy Policy</a>
               <a href="/terms">Terms of Service</a>

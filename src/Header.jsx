@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import JusterNetLogo from './JusterNetLogo';
+//import JusterNetLogo from './JusterNetLogo';
+import JusterNetLogo from './JusterNetLogo_V1';
+
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,14 +37,7 @@ const Header = () => {
           </ul>
         </nav>
 
-        <div className="header-actions">
-          <a href="/login" className="btn-secondary">
-            Sign In
-          </a>
-          <a href="/login" className="btn-primary">
-            Get Started
-          </a>
-        </div>
+      
 
         <button
           className={`mobile-menu-toggle ${isMenuOpen ? 'active' : ''}`}
