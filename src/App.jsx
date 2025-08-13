@@ -1201,6 +1201,23 @@ function App() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <motion.div className="tech-category" variants={scaleIn}>
+              <h3>Blockchain & Web3</h3>
+              <div className="tech-list">
+                <span>Ethereum</span>
+                <span>Solidity</span>
+                <span>Web3.js</span>
+                <span>Ethers.js</span>
+                <span>Hardhat</span>
+                <span>Truffle</span>
+                <span>IPFS</span>
+                <span>MetaMask</span>
+                <span>Smart Contracts</span>
+                <span>DeFi Protocols</span>
+                <span>NFT Development</span>
+              </div>
+            </motion.div>
+
+            <motion.div className="tech-category" variants={scaleIn}>
               <h3>Frontend Development</h3>
               <div className="tech-list">
                 <span>React.js</span>
@@ -1296,23 +1313,6 @@ function App() {
                 <span>Natural Language Processing</span>
                 <span>Deep Learning</span>
                 <span>MLOps</span>
-              </div>
-            </motion.div>
-
-            <motion.div className="tech-category" variants={scaleIn}>
-              <h3>Blockchain & Web3</h3>
-              <div className="tech-list">
-                <span>Ethereum</span>
-                <span>Solidity</span>
-                <span>Web3.js</span>
-                <span>Ethers.js</span>
-                <span>Hardhat</span>
-                <span>Truffle</span>
-                <span>IPFS</span>
-                <span>MetaMask</span>
-                <span>Smart Contracts</span>
-                <span>DeFi Protocols</span>
-                <span>NFT Development</span>
               </div>
             </motion.div>
 
