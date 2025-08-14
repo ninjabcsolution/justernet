@@ -35,11 +35,11 @@ function App() {
       email: Yup.string().email('Invalid email address').required('Required'),
       subject: Yup.string()
         .min(3, 'Must be 3 characters or more')
-        .max(20, 'Must be 20 characters or less')
+        .max(50, 'Must be 50 characters or less')
         .required('Required'),
       message: Yup.string()
         .min(3, 'Must be 3 characters or more')
-        .max(20, 'Must be 20 characters or less')
+        .max(200, 'Must be 200 characters or less')
         .required('Required'),
     }),
   });
@@ -138,7 +138,6 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formik.isValid, formik.errors);
     if (formik.touched && formik.isValid) {
       try {
         const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, formik.values, {
@@ -187,33 +186,6 @@ function App() {
         }
       }
     }
-
-    // try {
-    //   const result = await sendContactEmail(formik.values);
-
-    //   if (result.success) {
-    //     formik.resetForm();
-    //     return Swal.fire({
-    //       icon: 'success',
-    //       title: 'Success!',
-    //       text: `Your email was sent successfully!`,
-    //     });
-    //   } else {
-    //     return Swal.fire({
-    //       icon: 'error',
-    //       title: 'Failed!',
-    //       text: result.message || 'Failed to send message. Please try again later.',
-    //     });
-    //   }
-    // } catch (error) {
-    //   return Swal.fire({
-    //     icon: 'error',
-    //     title: 'Failed!',
-    //     text: 'An unexpected error occurred. Please try again later.',
-    //   });
-    // } finally {
-    // }
-    // }
   };
 
   // Work Process Step Component
