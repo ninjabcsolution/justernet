@@ -1898,3 +1898,7 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 100%);
 }
+
+.error_message {
+  color: #ff0000;
+}

@@ -1573,9 +1573,7 @@ function App() {
                     required
                   />
                   {formik.touched.fullName && formik.errors.fullName && (
-                    <span className="min-h-[20px] absolute start-0 top-[100%] text-sm text-[#ff0000] error_message">
-                      {formik.errors.fullName}
-                    </span>
+                    <span className="error_message">{formik.errors.fullName}</span>
                   )}
                 </div>
                 <div className="form-group">
@@ -1586,9 +1584,7 @@ function App() {
                     required
                   />
                   {formik.touched.email && formik.errors.email && (
-                    <span className="min-h-[20px] absolute start-0 top-[100%] text-sm text-[#ff0000] error_message">
-                      {formik.errors.email}
-                    </span>
+                    <span className="error_message">{formik.errors.email}</span>
                   )}
                 </div>
                 <div className="form-group">
@@ -1599,9 +1595,7 @@ function App() {
                     required
                   />
                   {formik.touched.subject && formik.errors.subject && (
-                    <span className="min-h-[20px] absolute start-0 top-[100%] text-sm text-[#ff0000] error_message">
-                      {formik.errors.subject}
-                    </span>
+                    <span className="error_message">{formik.errors.subject}</span>
                   )}
                 </div>
                 <div className="form-group">
@@ -1612,9 +1606,7 @@ function App() {
                     required
                   ></textarea>
                   {formik.touched.message && formik.errors.message && (
-                    <span className="min-h-[20px] absolute start-0 top-[100%] text-sm text-[#ff0000] error_message">
-                      {formik.errors.message}
-                    </span>
+                    <span className="error_message">{formik.errors.message}</span>
                   )}
                 </div>
                 <motion.button
